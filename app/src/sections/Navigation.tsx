@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
@@ -9,17 +10,37 @@ const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact', href: '#contact' },
+  { name: 'Blog', href: '/blog' },
 ];
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isScrolled } = useScrollPosition();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      navigate(href);
+    }
+  };
 
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      handleNavClick(href);
+    } else {
+      navigate(href);
     }
   };
 
@@ -39,11 +60,15 @@ export function Navigation() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <motion.a
-              href="#"
+              href="/"
               className="flex flex-col items-start"
               onClick={(e) => {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (location.pathname !== '/') {
+                  navigate('/');
+                } else {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
               }}
               whileHover={{ opacity: 0.8 }}
               transition={{ duration: 0.2 }}
@@ -61,7 +86,7 @@ export function Navigation() {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => handleNavClick(link.href)}
                   className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-wide"
                 >
                   {link.name.toUpperCase()}
@@ -126,7 +151,7 @@ export function Navigation() {
                   {navLinks.map((link) => (
                     <button
                       key={link.name}
-                      onClick={() => scrollToSection(link.href)}
+                      onClick={() => handleNavClick(link.href)}
                       className="text-left text-lg font-medium text-gray-900 hover:text-teal transition-colors"
                     >
                       {link.name}

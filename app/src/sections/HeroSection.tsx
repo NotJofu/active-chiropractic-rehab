@@ -5,7 +5,7 @@ import { ArrowRight, Phone, MapPin, Clock } from 'lucide-react';
 const stats = [
   { value: '500+', label: 'Patients Helped' },
   { value: '5.0', label: 'Google Rating' },
-  { value: '2', label: 'Specialized Techniques' },
+  { value: '4', label: 'Specialized Techniques' },
 ];
 
 export function HeroSection() {
@@ -49,19 +49,21 @@ export function HeroSection() {
               <span className="text-sm text-gray-500">Thibodaux, Louisiana</span>
               <span className="text-gray-300">|</span>
               <Clock className="w-4 h-4 text-teal" />
-              <span className="text-sm text-gray-500">Mon-Fri 8:30-5</span>
+              <span className="text-sm text-gray-500">Mon-Thu 8-6 | Fri 8-12</span>
             </motion.div>
 
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-medium text-gray-900 leading-[1.05] mb-6">
-              Expert Chiropractic
+              Evidence Based Chiropractic
               <br />
               <span className="italic text-teal">Care You Can Trust</span>
             </h1>
 
             <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
-              Dr. Logan Authement specializes in Cox Technique spinal decompression 
-              and dry needling therapy. Experience personalized treatment plans designed 
-              to get you back to doing what you love—pain-free.
+              Dr. Logan Authement, D.C. is an evidence-based, rehab-focused chiropractor
+              specializing in spinal decompression using the Cox Technique, neurodynamic
+              dry needling, and performance rehabilitation. We provide personalized treatment
+              plans designed to relieve pain, restore function, and keep you active in faith,
+              fitness, and life.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">

@@ -8,45 +8,16 @@ import {
   Shield,
   ArrowRight,
   Check,
+  CircleDot,
 } from 'lucide-react';
 
-const services = [
-  {
-    icon: Activity,
-    title: 'Cox Technique',
-    subtitle: 'Spinal Decompression Therapy',
-    description: 'A gentle, non-surgical approach to treating disc herniations, sciatica, and spinal stenosis. The Cox Technique uses specialized flexion-distraction to reduce pressure on spinal nerves and promote healing.',
-    benefits: ['Reduces intradiscal pressure', 'Increases spinal canal space', 'Relieves nerve compression', 'Promotes natural healing'],
-    cta: 'Learn About Cox Technique',
-    href: '#contact',
-    image: '/images/cox-technique.jpg',
-  },
-  {
-    icon: Target,
-    title: 'Dry Needling',
-    subtitle: 'Trigger Point Therapy',
-    description: 'Precision treatment targeting myofascial trigger points to release muscle tension, reduce pain, and restore range of motion. Unlike acupuncture, dry needling focuses on musculoskeletal dysfunction.',
-    benefits: ['Releases muscle knots', 'Improves flexibility', 'Reduces chronic pain', 'Accelerates recovery'],
-    cta: 'Discover Dry Needling',
-    href: '#contact',
-    image: '/images/dry-needling.jpg',
-  },
+const additionalServices = [
   {
     icon: Hand,
     title: 'Chiropractic Adjustments',
     subtitle: 'Spinal Manipulation',
     description: 'Traditional hands-on adjustments to correct spinal misalignments, restore proper joint function, and optimize nervous system performance for overall wellness.',
-    benefits: ['Restores spinal alignment', 'Improves joint mobility', 'Reduces inflammation', 'Enhances nerve function'],
     cta: 'View Adjustment Options',
-    href: '#contact',
-  },
-  {
-    icon: Dumbbell,
-    title: 'Rehabilitation Therapy',
-    subtitle: 'Exercise & Strengthening',
-    description: 'Customized exercise programs designed to strengthen supporting muscles, improve flexibility, and prevent future injuries. Your path to long-term spinal health.',
-    benefits: ['Builds core strength', 'Prevents re-injury', 'Improves posture', 'Supports daily activities'],
-    cta: 'Start Your Rehab Plan',
     href: '#contact',
   },
   {
@@ -54,7 +25,6 @@ const services = [
     title: 'Pain Management',
     subtitle: 'Comprehensive Care',
     description: 'Holistic approach to managing chronic pain conditions including lower back pain, neck pain, headaches, and sports injuries. We address the root cause, not just symptoms.',
-    benefits: ['Drug-free pain relief', 'Personalized treatment', 'Long-term solutions', 'Improved quality of life'],
     cta: 'Find Pain Relief',
     href: '#contact',
   },
@@ -63,7 +33,6 @@ const services = [
     title: 'Wellness Care',
     subtitle: 'Preventive Maintenance',
     description: 'Regular chiropractic maintenance to keep your spine healthy, prevent problems before they start, and maintain optimal function for an active lifestyle.',
-    benefits: ['Prevents spinal issues', 'Maintains mobility', 'Optimizes performance', 'Supports overall health'],
     cta: 'Begin Wellness Care',
     href: '#contact',
   },
@@ -101,7 +70,7 @@ export function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Featured Services with Images */}
+        {/* Featured Specialty Services */}
         <div className="space-y-16 mb-16">
           {/* Cox Technique Feature */}
           <motion.div
@@ -128,8 +97,8 @@ export function ServicesSection() {
               <h3 className="font-heading text-3xl font-medium text-gray-900 mb-2">Cox Technique</h3>
               <p className="text-sm text-gray-400 mb-4">Spinal Decompression Therapy</p>
               <p className="text-gray-500 leading-relaxed mb-6">
-                A gentle, non-surgical approach to treating disc herniations, sciatica, and spinal stenosis. 
-                The Cox Technique uses specialized flexion-distraction to reduce pressure on spinal nerves 
+                A gentle, non-surgical approach to treating disc herniations, sciatica, and spinal stenosis.
+                The Cox Technique uses specialized flexion-distraction to reduce pressure on spinal nerves
                 and promote natural healing.
               </p>
               <ul className="space-y-2 mb-8">
@@ -167,10 +136,10 @@ export function ServicesSection() {
                 <span className="text-xs tracking-[0.2em] text-turquoise uppercase">Specialty Service</span>
               </div>
               <h3 className="font-heading text-3xl font-medium text-gray-900 mb-2">Dry Needling</h3>
-              <p className="text-sm text-gray-400 mb-4">Trigger Point Therapy</p>
+              <p className="text-sm text-gray-400 mb-4">Neurodynamic Trigger Point Therapy</p>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Precision treatment targeting myofascial trigger points to release muscle tension, 
-                reduce pain, and restore range of motion. Unlike acupuncture, dry needling focuses 
+                Precision treatment targeting myofascial trigger points to release muscle tension,
+                reduce pain, and restore range of motion. Unlike acupuncture, dry needling focuses
                 on musculoskeletal dysfunction for rapid results.
               </p>
               <ul className="space-y-2 mb-8">
@@ -198,6 +167,150 @@ export function ServicesSection() {
               />
             </div>
           </motion.div>
+
+          {/* Therapeutic & Performance Rehabilitation */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid lg:grid-cols-2 gap-8 items-center bg-white"
+          >
+            <div className="aspect-video lg:aspect-auto lg:h-full overflow-hidden bg-gradient-to-br from-teal/10 via-turquoise/10 to-teal/5 flex items-center justify-center">
+              <div className="text-center p-12">
+                <Dumbbell className="w-20 h-20 text-teal/40 mx-auto mb-4" />
+                <p className="text-sm text-teal/60 uppercase tracking-widest">Image Coming Soon</p>
+              </div>
+            </div>
+            <div className="p-8 lg:p-12">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center">
+                  <Dumbbell className="w-6 h-6 text-teal" />
+                </div>
+                <span className="text-xs tracking-[0.2em] text-teal uppercase">Specialty Service</span>
+              </div>
+              <h3 className="font-heading text-3xl font-medium text-gray-900 mb-2">Therapeutic & Performance Rehabilitation</h3>
+              <p className="text-sm text-gray-400 mb-4">Restore. Strengthen. Perform.</p>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                Therapeutic and performance rehabilitation focuses on restoring strength, mobility, and movement
+                control to reduce pain and prevent re-injury. Using targeted exercises, neuromuscular training,
+                and progressive loading, we address the root cause of dysfunction—not just symptoms—so patients
+                can return to daily activities, training, and sport with confidence.
+              </p>
+              <ul className="space-y-2 mb-8">
+                {['Targeted exercise programs', 'Neuromuscular training', 'Progressive loading protocols'].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <Check className="w-4 h-4 text-teal" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <motion.button
+                onClick={() => scrollToSection('#contact')}
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-teal transition-colors"
+              >
+                Start Your Rehab Plan
+                <ArrowRight className="w-4 h-4" />
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* Manual Therapy & IASTM - Reversed */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid lg:grid-cols-2 gap-8 items-center bg-white"
+          >
+            <div className="p-8 lg:p-12 order-2 lg:order-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-turquoise/10 rounded-full flex items-center justify-center">
+                  <Hand className="w-6 h-6 text-turquoise" />
+                </div>
+                <span className="text-xs tracking-[0.2em] text-turquoise uppercase">Specialty Service</span>
+              </div>
+              <h3 className="font-heading text-3xl font-medium text-gray-900 mb-2">Manual Therapy & IASTM</h3>
+              <p className="text-sm text-gray-400 mb-4">Instrument-Assisted Soft Tissue Therapy</p>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                Manual therapy and instrument-assisted soft tissue therapy are used to improve mobility,
+                reduce pain, and restore healthy tissue movement. Through hands-on techniques and precision
+                instruments, we address muscle tension, soft tissue restrictions, and joint stiffness to
+                improve movement quality and support faster, more effective rehabilitation.
+              </p>
+              <ul className="space-y-2 mb-8">
+                {['Improves tissue mobility', 'Reduces muscle tension', 'Restores joint function'].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <Check className="w-4 h-4 text-turquoise" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <motion.button
+                onClick={() => scrollToSection('#contact')}
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-turquoise transition-colors"
+              >
+                Learn About Manual Therapy
+                <ArrowRight className="w-4 h-4" />
+              </motion.button>
+            </div>
+            <div className="aspect-video lg:aspect-auto lg:h-full overflow-hidden order-1 lg:order-2 bg-gradient-to-br from-turquoise/10 via-teal/10 to-turquoise/5 flex items-center justify-center">
+              <div className="text-center p-12">
+                <Hand className="w-20 h-20 text-turquoise/40 mx-auto mb-4" />
+                <p className="text-sm text-turquoise/60 uppercase tracking-widest">Image Coming Soon</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Cupping Therapy */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid lg:grid-cols-2 gap-8 items-center bg-white"
+          >
+            <div className="aspect-video lg:aspect-auto lg:h-full overflow-hidden bg-gradient-to-br from-teal/10 via-turquoise/10 to-teal/5 flex items-center justify-center">
+              <div className="text-center p-12">
+                <CircleDot className="w-20 h-20 text-teal/40 mx-auto mb-4" />
+                <p className="text-sm text-teal/60 uppercase tracking-widest">Image Coming Soon</p>
+              </div>
+            </div>
+            <div className="p-8 lg:p-12">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center">
+                  <CircleDot className="w-6 h-6 text-teal" />
+                </div>
+                <span className="text-xs tracking-[0.2em] text-teal uppercase">Specialty Service</span>
+              </div>
+              <h3 className="font-heading text-3xl font-medium text-gray-900 mb-2">Cupping Therapy</h3>
+              <p className="text-sm text-gray-400 mb-4">Decompression & Recovery</p>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                Cupping therapy is used to improve circulation, reduce muscle tension, and enhance tissue
+                mobility. By creating negative pressure, cupping helps decompress soft tissues, promote
+                blood flow, and support recovery—making it a valuable tool for pain relief, movement
+                restoration, and performance-based rehabilitation.
+              </p>
+              <ul className="space-y-2 mb-8">
+                {['Improves circulation', 'Decompresses soft tissues', 'Supports recovery'].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <Check className="w-4 h-4 text-teal" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <motion.button
+                onClick={() => scrollToSection('#contact')}
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-teal transition-colors"
+              >
+                Try Cupping Therapy
+                <ArrowRight className="w-4 h-4" />
+              </motion.button>
+            </div>
+          </motion.div>
         </div>
 
         {/* Other Services Grid */}
@@ -211,7 +324,7 @@ export function ServicesSection() {
             Additional Services
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {services.slice(2).map((service, index) => {
+            {additionalServices.map((service, index) => {
               const Icon = service.icon;
               return (
                 <motion.div

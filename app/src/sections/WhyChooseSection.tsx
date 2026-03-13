@@ -5,7 +5,7 @@ const features = [
   {
     icon: Award,
     title: 'Specialized Expertise',
-    description: 'Certified in Cox Technique and dry needling—advanced methods not offered by all chiropractors.',
+    description: 'Certified in Cox Technique, neurodynamic dry needling, performance rehabilitation, and manual therapy—advanced methods not offered by all chiropractors.',
   },
   {
     icon: UserCheck,

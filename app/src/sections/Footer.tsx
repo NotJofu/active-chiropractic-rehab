@@ -1,24 +1,39 @@
 import { ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const quickLinks = [
   { name: 'Services', href: '#services' },
   { name: 'About Dr. Authement', href: '#about' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact', href: '#contact' },
+  { name: 'Blog', href: '/blog' },
 ];
 
 const services = [
   { name: 'Cox Technique', href: '#services' },
   { name: 'Dry Needling', href: '#services' },
+  { name: 'Performance Rehabilitation', href: '#services' },
+  { name: 'Manual Therapy & IASTM', href: '#services' },
+  { name: 'Cupping Therapy', href: '#services' },
   { name: 'Chiropractic Adjustments', href: '#services' },
-  { name: 'Rehabilitation Therapy', href: '#services' },
 ];
 
 export function Footer() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      navigate(href);
     }
   };
 
@@ -41,8 +56,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Expert chiropractic care in Thibodaux, Louisiana. Specializing in Cox Technique 
-              and dry needling to help you live pain-free.
+              Evidence-based chiropractic care in Thibodaux, Louisiana. Specializing in Cox Technique,
+              dry needling, rehabilitation, and manual therapy to help you live pain-free.
             </p>
             <p className="text-xs text-gray-600">
               Active in Faith. Active in Fitness. Active in Life.
@@ -58,7 +73,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
-                    onClick={() => scrollToSection(link.href)}
+                    onClick={() => handleNavClick(link.href)}
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
@@ -77,7 +92,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.name}>
                   <button
-                    onClick={() => scrollToSection(service.href)}
+                    onClick={() => handleNavClick(service.href)}
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {service.name}

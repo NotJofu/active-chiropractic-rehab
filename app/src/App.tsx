@@ -1,26 +1,25 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navigation } from './sections/Navigation';
-import { HeroSection } from './sections/HeroSection';
-import { ServicesSection } from './sections/ServicesSection';
-import { AboutSection } from './sections/AboutSection';
-import { WhyChooseSection } from './sections/WhyChooseSection';
-import { TestimonialsSection } from './sections/TestimonialsSection';
-import { ContactSection } from './sections/ContactSection';
 import { Footer } from './sections/Footer';
+import { HomePage } from './pages/HomePage';
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        <AboutSection />
-        <WhyChooseSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -150,7 +150,7 @@ export function TestimonialsSection() {
               { value: '500+', label: 'Happy Patients' },
               { value: '5.0', label: 'Google Rating' },
               { value: '98%', label: 'Would Recommend' },
-              { value: '2', label: 'Specialized Techniques' },
+              { value: '4', label: 'Specialized Techniques' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

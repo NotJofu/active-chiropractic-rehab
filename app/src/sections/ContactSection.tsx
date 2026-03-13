@@ -28,12 +28,12 @@ const contactInfo = [
 ];
 
 const hours = [
-  { day: 'Monday', time: '8:30 AM - 5:00 PM' },
-  { day: 'Tuesday', time: '8:30 AM - 5:00 PM' },
-  { day: 'Wednesday', time: '8:30 AM - 5:00 PM' },
-  { day: 'Thursday', time: '8:30 AM - 5:00 PM' },
-  { day: 'Friday', time: '8:30 AM - 5:00 PM' },
-  { day: 'Saturday - Sunday', time: 'Closed' },
+  { day: 'Monday', time: '8:00 AM - 6:00 PM' },
+  { day: 'Tuesday', time: '8:00 AM - 6:00 PM' },
+  { day: 'Wednesday', time: '8:00 AM - 6:00 PM' },
+  { day: 'Thursday', time: '8:00 AM - 6:00 PM' },
+  { day: 'Friday', time: '8:00 AM - 12:00 PM' },
+  { day: 'Saturday', time: 'By Appointment Only' },
 ];
 
 const insurancePlans = [

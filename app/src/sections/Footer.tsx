@@ -142,10 +142,16 @@ export function Footer() {
               © {new Date().getFullYear()} Active Chiropractic & Rehab. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <button className="text-gray-600 hover:text-white transition-colors text-xs">
+              <button
+                onClick={() => handleNavClick('/privacy-policy')}
+                className="text-gray-600 hover:text-white transition-colors text-xs"
+              >
                 Privacy Policy
               </button>
-              <button className="text-gray-600 hover:text-white transition-colors text-xs">
+              <button
+                onClick={() => handleNavClick('/terms-conditions')}
+                className="text-gray-600 hover:text-white transition-colors text-xs"
+              >
                 Terms of Service
               </button>
               <button

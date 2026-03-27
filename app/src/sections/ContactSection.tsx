@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Mail, Clock, ArrowRight, Facebook, Instagram, Check } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const contactInfo = [
   {
@@ -50,12 +51,13 @@ export function ContactSection() {
     phone: '',
     email: '',
     message: '',
+    smsConsent: false,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Thank you for your message! We will contact you soon to schedule your appointment.');
-    setFormData({ name: '', phone: '', email: '', message: '' });
+    setFormData({ name: '', phone: '', email: '', message: '', smsConsent: false });
   };
 
   return (
@@ -253,6 +255,21 @@ export function ContactSection() {
                     className="w-full px-4 py-3 rounded-none border border-gray-200 focus:border-gray-900 focus:ring-0 resize-none"
                   />
                 </div>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="smsConsent"
+                    checked={formData.smsConsent}
+                    onChange={(e) => setFormData({ ...formData, smsConsent: e.target.checked })}
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 border border-gray-300 accent-gray-900"
+                  />
+                  <label htmlFor="smsConsent" className="text-xs text-gray-500 leading-relaxed">
+                    I consent to receive SMS messages (appointment reminders, scheduling updates) from Active Chiropractic and Rehab. Message & data rates may apply. Reply STOP to opt out. View our{' '}
+                    <Link to="/privacy-policy" className="text-teal underline hover:text-teal-dark">Privacy Policy</Link>{' '}and{' '}
+                    <Link to="/terms-conditions" className="text-teal underline hover:text-teal-dark">Terms & Conditions</Link>.
+                  </label>
+                </div>
                 <Button
                   type="submit"
                   className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-none py-6 text-sm font-medium tracking-wide transition-all"
@@ -261,7 +278,9 @@ export function ContactSection() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
                 <p className="text-xs text-gray-400 text-center">
-                  By submitting, you agree to be contacted about your appointment request.
+                  By submitting, you agree to our{' '}
+                  <Link to="/privacy-policy" className="underline hover:text-gray-600">Privacy Policy</Link>{' '}and{' '}
+                  <Link to="/terms-conditions" className="underline hover:text-gray-600">Terms & Conditions</Link>.
                 </p>
               </form>
             </div>

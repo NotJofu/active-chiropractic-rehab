@@ -162,8 +162,8 @@ export function ServicesSection() {
             <div className="aspect-video lg:aspect-auto lg:h-full overflow-hidden order-1 lg:order-2">
               <img
                 src="/images/dry-needling.jpg"
-                alt="Dry needling trigger point therapy"
-                className="w-full h-full object-cover"
+                alt="Dr. Authement performing neurodynamic dry needling on a patient's upper back"
+                className="w-full h-full object-cover object-[center_35%]"
               />
             </div>
           </motion.div>
@@ -272,11 +272,12 @@ export function ServicesSection() {
             transition={{ duration: 0.6 }}
             className="grid lg:grid-cols-2 gap-8 items-center bg-white"
           >
-            <div className="aspect-video lg:aspect-auto lg:h-full overflow-hidden bg-gradient-to-br from-teal/10 via-turquoise/10 to-teal/5 flex items-center justify-center">
-              <div className="text-center p-12">
-                <CircleDot className="w-20 h-20 text-teal/40 mx-auto mb-4" />
-                <p className="text-sm text-teal/60 uppercase tracking-widest">Image Coming Soon</p>
-              </div>
+            <div className="aspect-video lg:aspect-auto lg:h-full overflow-hidden">
+              <img
+                src="/images/cupping-therapy.jpg"
+                alt="Cupping therapy cups applied along a patient's back"
+                className="w-full h-full object-cover object-[center_35%]"
+              />
             </div>
             <div className="p-8 lg:p-12">
               <div className="flex items-center gap-3 mb-4">
